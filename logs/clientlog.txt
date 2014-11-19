@@ -1,0 +1,96 @@
+Nov 19, 2014 11:41:22 AM org.glassfish.tyrus.core.BaseContainer newExecutorService
+FINE: null
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.glassfish.tyrus.core.BaseContainer.newExecutorService(BaseContainer.java:111)
+	at org.glassfish.tyrus.core.BaseContainer.<init>(BaseContainer.java:73)
+	at org.glassfish.tyrus.client.ClientManager.<init>(ClientManager.java:258)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:234)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:213)
+	at com.hartley.websockets.client.WordgameClientEndpoint.main(WordgameClientEndpoint.java:38)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	... 10 more
+
+Nov 19, 2014 11:41:22 AM org.glassfish.tyrus.core.BaseContainer newScheduledExecutorService
+FINE: null
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.glassfish.tyrus.core.BaseContainer.newScheduledExecutorService(BaseContainer.java:141)
+	at org.glassfish.tyrus.core.BaseContainer.<init>(BaseContainer.java:74)
+	at org.glassfish.tyrus.client.ClientManager.<init>(ClientManager.java:258)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:234)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:213)
+	at com.hartley.websockets.client.WordgameClientEndpoint.main(WordgameClientEndpoint.java:38)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	... 10 more
+
+Nov 19, 2014 11:41:22 AM org.glassfish.tyrus.client.ClientManager <init>
+CONFIG: Provider class loaded: org.glassfish.tyrus.container.grizzly.client.GrizzlyClientContainer
+Nov 19, 2014 11:41:22 AM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket processProxy
+FINE: Not using proxy for URI 'ws://localhost:8025/websockets/game'.
+Nov 19, 2014 11:41:23 AM org.glassfish.grizzly.utils.DataStructures <clinit>
+FINE: USING LTQ class:class java.util.concurrent.LinkedTransferQueue
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket _connect
+CONFIG: Connecting to 'ws://localhost:8025/websockets/game' (no proxy).
+Nov 19, 2014 11:41:23 AM org.glassfish.grizzly.nio.DefaultSelectionKeyHandler onKeyRegistered
+FINE: KEY IS REGISTERED: sun.nio.ch.SelectionKeyImpl@18301ea4
+Nov 19, 2014 11:41:23 AM org.glassfish.grizzly.nio.transport.TCPNIOUtils writeSimpleBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:53716}, peerSocketAddress={localhost/127.0.0.1:8025}}) (plain) write 192 bytes
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket _connect
+CONFIG: Connected to 'localhost/127.0.0.1:8025'.
+Nov 19, 2014 11:41:23 AM org.glassfish.grizzly.nio.transport.TCPNIOUtils allocateAndReadBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:53716}, peerSocketAddress={localhost/127.0.0.1:8025}}) (allocated) read 139 bytes
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientFilter handleRead
+FINE: handleRead websocket: null content-size=0 headers=
+HttpResponsePacket (
+  status=101
+  reason=Web Socket Protocol Handshake
+  protocol=HTTP/1.1
+  content-length=-1
+  committed=false
+  headers=[
+      connection=Upgrade
+      sec-websocket-accept=9rckmo4P2YjXgw4K1DF+fGSb9vI=
+      upgrade=websocket]
+)
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.core.DebugContext flush
+FINE: * Session 2bc21bdd-d61a-4e43-b77a-26d28592d0b5 [52 ms]: Redirect enabled: false
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.core.DebugContext flush
+FINE: > Session 2bc21bdd-d61a-4e43-b77a-26d28592d0b5 [156 ms]: Sending handshake request:
+> GET ws://localhost:8025/websockets/game
+> Connection: Upgrade
+> Host: localhost:8025
+> Origin: localhost:8025
+> Sec-WebSocket-Key: 4CqWhdB0xTdzHKqPK7DaCA==
+> Sec-WebSocket-Version: 13
+> Upgrade: websocket
+
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.core.DebugContext flush
+FINE: < Session 2bc21bdd-d61a-4e43-b77a-26d28592d0b5 [717 ms]: Received handshake response: 
+< 101
+< connection: Upgrade
+< sec-websocket-accept: 9rckmo4P2YjXgw4K1DF+fGSb9vI=
+< upgrade: websocket
+
+Nov 19, 2014 11:41:23 AM com.hartley.websockets.client.WordgameClientEndpoint onOpen
+INFO: Connected from the client... 2bc21bdd-d61a-4e43-b77a-26d28592d0b5
+Nov 19, 2014 11:41:23 AM org.glassfish.grizzly.nio.transport.TCPNIOUtils writeSimpleBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:53716}, peerSocketAddress={localhost/127.0.0.1:8025}}) (plain) write 11 bytes
+Nov 19, 2014 11:41:23 AM com.hartley.websockets.client.WordgameClientEndpoint onOpen
+INFO: Completed send text OK
+Nov 19, 2014 11:41:23 AM org.glassfish.tyrus.core.DebugContext appendLogMessageWithThrowable
+FINE: * Session 2bc21bdd-d61a-4e43-b77a-26d28592d0b5 [758 ms]: Incoming buffer size: 4194315
