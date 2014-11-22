@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
 
@@ -33,6 +35,9 @@ public class WordgameClientEndpoint {
     }
  
     public static void main(String[] args) {
+        
+        
+        
         latch = new CountDownLatch(1);
  
         ClientManager client = ClientManager.createClient();
@@ -58,6 +63,8 @@ public class WordgameClientEndpoint {
  
     @OnOpen
     public void onOpen(Session session) {
+        String version = System.getProperty("java.version");
+        logger.info("Java version from System.getProperty(\"java.version\") is " + version);
         logger.info("Connected from the client... " + session.getId());
         try {
             session.getBasicRemote().sendText("start");

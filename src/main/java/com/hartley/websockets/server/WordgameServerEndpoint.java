@@ -18,6 +18,8 @@ public class WordgameServerEndpoint {
  
     @OnOpen
     public void onOpen(Session session) {
+        String version = System.getProperty("java.version");
+        logger.info("Java version from System.getProperty(\"java.version\") is " + version);
         logger.info("Connected ... " + session.getId());
     }
  
