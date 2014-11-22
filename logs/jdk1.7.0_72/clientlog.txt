@@ -1,0 +1,98 @@
+Nov 22, 2014 9:31:57 PM org.glassfish.tyrus.core.BaseContainer newExecutorService
+FINE: null
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.glassfish.tyrus.core.BaseContainer.newExecutorService(BaseContainer.java:111)
+	at org.glassfish.tyrus.core.BaseContainer.<init>(BaseContainer.java:73)
+	at org.glassfish.tyrus.client.ClientManager.<init>(ClientManager.java:258)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:234)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:213)
+	at com.hartley.websockets.client.WordgameClientEndpoint.main(WordgameClientEndpoint.java:43)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	... 10 more
+
+Nov 22, 2014 9:31:57 PM org.glassfish.tyrus.core.BaseContainer newScheduledExecutorService
+FINE: null
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.glassfish.tyrus.core.BaseContainer.newScheduledExecutorService(BaseContainer.java:141)
+	at org.glassfish.tyrus.core.BaseContainer.<init>(BaseContainer.java:74)
+	at org.glassfish.tyrus.client.ClientManager.<init>(ClientManager.java:258)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:234)
+	at org.glassfish.tyrus.client.ClientManager.createClient(ClientManager.java:213)
+	at com.hartley.websockets.client.WordgameClientEndpoint.main(WordgameClientEndpoint.java:43)
+Caused by: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	... 10 more
+
+Nov 22, 2014 9:31:57 PM org.glassfish.tyrus.client.ClientManager <init>
+CONFIG: Provider class loaded: org.glassfish.tyrus.container.grizzly.client.GrizzlyClientContainer
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket processProxy
+FINE: Not using proxy for URI 'ws://localhost:8025/websockets/game'.
+Nov 22, 2014 9:31:58 PM org.glassfish.grizzly.utils.DataStructures <clinit>
+FINE: USING LTQ class:class java.util.concurrent.LinkedTransferQueue
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket _connect
+CONFIG: Connecting to 'ws://localhost:8025/websockets/game' (no proxy).
+Nov 22, 2014 9:31:58 PM org.glassfish.grizzly.nio.DefaultSelectionKeyHandler onKeyRegistered
+FINE: KEY IS REGISTERED: sun.nio.ch.SelectionKeyImpl@41466e67
+Nov 22, 2014 9:31:58 PM org.glassfish.grizzly.nio.transport.TCPNIOUtils writeSimpleBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:49876}, peerSocketAddress={localhost/127.0.0.1:8025}}) (plain) write 192 bytes
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientSocket _connect
+CONFIG: Connected to 'localhost/127.0.0.1:8025'.
+Nov 22, 2014 9:31:58 PM org.glassfish.grizzly.nio.transport.TCPNIOUtils allocateAndReadBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:49876}, peerSocketAddress={localhost/127.0.0.1:8025}}) (allocated) read 139 bytes
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.container.grizzly.client.GrizzlyClientFilter handleRead
+FINE: handleRead websocket: null content-size=0 headers=
+HttpResponsePacket (
+  status=101
+  reason=Web Socket Protocol Handshake
+  protocol=HTTP/1.1
+  content-length=-1
+  committed=false
+  headers=[
+      connection=Upgrade
+      sec-websocket-accept=frEgrovXk0AWWOBUfU82aB45KP8=
+      upgrade=websocket]
+)
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.core.DebugContext flush
+FINE: * Session a5dd94ee-c56d-4e31-963b-1c54b0abb218 [55 ms]: Redirect enabled: false
+Nov 22, 2014 9:31:58 PM org.glassfish.tyrus.core.DebugContext flush
+FINE: > Session a5dd94ee-c56d-4e31-963b-1c54b0abb218 [461 ms]: Sending handshake request:
+> GET ws://localhost:8025/websockets/game
+> Connection: Upgrade
+> Host: localhost:8025
+> Origin: localhost:8025
+> Sec-WebSocket-Key: XcuKtoeLOGEAA+G+FJpmog==
+> Sec-WebSocket-Version: 13
+> Upgrade: websocket
+
+Nov 22, 2014 9:31:59 PM org.glassfish.tyrus.core.DebugContext flush
+FINE: < Session a5dd94ee-c56d-4e31-963b-1c54b0abb218 [1032 ms]: Received handshake response: 
+< 101
+< connection: Upgrade
+< sec-websocket-accept: frEgrovXk0AWWOBUfU82aB45KP8=
+< upgrade: websocket
+
+Nov 22, 2014 9:31:59 PM com.hartley.websockets.client.WordgameClientEndpoint onOpen
+INFO: Java version from System.getProperty("java.version") is 1.7.0_72
+Nov 22, 2014 9:31:59 PM com.hartley.websockets.client.WordgameClientEndpoint onOpen
+INFO: Connected from the client... a5dd94ee-c56d-4e31-963b-1c54b0abb218
+Nov 22, 2014 9:31:59 PM org.glassfish.grizzly.nio.transport.TCPNIOUtils writeSimpleBuffer
+FINE: TCPNIOConnection (TCPNIOConnection{localSocketAddress={/127.0.0.1:49876}, peerSocketAddress={localhost/127.0.0.1:8025}}) (plain) write 11 bytes
+Nov 22, 2014 9:31:59 PM com.hartley.websockets.client.WordgameClientEndpoint onOpen
+INFO: Completed send text OK
+Nov 22, 2014 9:31:59 PM org.glassfish.tyrus.core.DebugContext appendLogMessageWithThrowable
+FINE: * Session a5dd94ee-c56d-4e31-963b-1c54b0abb218 [1074 ms]: Incoming buffer size: 4194315
